@@ -93,22 +93,40 @@ class LinkedList:
             array.append(current.value)
             current = current.next
         return array
-    
-    # write function to insert item into linkedlist at index
-    
 
-    
+    def reverse(self):
+        if self._is_empty():
+            return
+        prev = self.first
+        current = self.first.next
+        while current is not None:
+            next = current.next
+            current.next = prev
+            prev = current
+            current = next
+
+        self.last = self.first
+        self.last.next = None
+        self.first = prev
+
+    def get_kth_from_the_end(self, k):
+        if self._is_empty():
+            raise Exception("This list is empty.")
+        if k < 1:
+            raise ValueError("k cannot be less than one.")
+        last_pointer = target_pointer = self.first
+        for _ in range(k-1):
+            last_pointer = last_pointer.next
+            if last_pointer is None:
+                raise ValueError(
+                    "k cannot be greater than the length of the list")
+        while last_pointer.next is not None:
+            last_pointer = last_pointer.next
+            target_pointer = target_pointer.next
+        return target_pointer.value
 
 
 l_list = LinkedList()
-l_list.add_first(40)
-l_list.add_first(30)
-l_list.add_last(20)
-l_list.add_last(10)
+# l_list.add_last(10)
 print(l_list.to_array())
-# l_list.remove_last()
-# l_list.remove_first()
-# print(l_list.size())
-
-# print(l_list.contains(30))
-# l_list.add_last(40)
+print(l_list.get_kth_from_the_end(5))
