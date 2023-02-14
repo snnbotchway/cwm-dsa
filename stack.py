@@ -5,7 +5,7 @@ class Stack:
         self.count = 0
 
     def push(self, value):
-        self.stack.append(value)
+        self.stack[self.count] = value
         self.count += 1
 
     def pop(self):
