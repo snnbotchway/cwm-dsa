@@ -32,5 +32,6 @@ def decrypt_user_id(encrypted_user_id):
     return plaintext.decode('utf-8')
 
 
-print(encrypt_user_id(1))
-print(decrypt_user_id("VmYnE/WRvdoWxYt1n+0Wu+BnKvwTCoTDu03hwMxN0qE="))
+cipher = encrypt_user_id(7654)
+print(cipher)
+print(decrypt_user_id(cipher))
