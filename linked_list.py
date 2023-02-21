@@ -126,7 +126,7 @@ class LinkedList:
         return target_pointer.value
 
 
-l_list = LinkedList()
-# l_list.add_last(10)
-print(l_list.to_array())
-print(l_list.get_kth_from_the_end(5))
+# l_list = LinkedList()
+# # l_list.add_last(10)
+# print(l_list.to_array())
+# print(l_list.get_kth_from_the_end(5))
